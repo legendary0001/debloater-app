@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">debloater</string>
+    <string name="title_activity_main">debloater</string>
+    <string name="package_name">ionic.debloater</string>
+    <string name="custom_url_scheme">ionic.debloater</string>
+</resources>
