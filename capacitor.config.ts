@@ -3,8 +3,8 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'ionic.debloater',
   appName: 'debloater',
-  webDir: 'dist',
-  bundledWebRuntime: false
+  webDir: 'dist'
+  
 ,
 
   plugins: {
@@ -17,7 +17,8 @@ const config: CapacitorConfig = {
     android: {
        buildOptions: {
           keystorePath: 'c:\Users\abc\debloater\my-release-key.keystore',
-          keystoreAlias: 'alias_name',
+        keystoreAlias: 'debug',
+        
        }
     }
   };
