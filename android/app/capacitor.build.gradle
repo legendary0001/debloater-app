@@ -19,6 +19,7 @@ dependencies {
     implementation project(':capacitor-toast')
     implementation project(':legendarythedev-capacitor-native-settings')
     implementation project(':legendarythedev-dev-options-checker')
+    implementation project(':capacitor-shell')
 
 }
 

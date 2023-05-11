@@ -131,6 +131,14 @@ import { ref } from 'vue';
 import { NativeSettings, AndroidSettings, IOSSettings } from "@legendarythedev/capacitor-native-settings"
 import { Toast } from "@capacitor/toast";
 import {LocalNotifications } from '@capacitor/local-notifications';
+import {Shell } from 'capacitor-shell';
+Shell.executeCommand({command: "adb devices"}).then((result: any) => {
+  console.log(result);
+  Toast.show({
+    text: result,
+    duration: "long",
+  });
+});
 let devtoolsenabled: boolean = false;
 DevOptionsChecker.checkDevOptions().then((result: any) => {
   devtoolsenabled = result.enabled;

@@ -31,3 +31,6 @@ project(':legendarythedev-capacitor-native-settings').projectDir = new File('../
 
 include ':legendarythedev-dev-options-checker'
 project(':legendarythedev-dev-options-checker').projectDir = new File('../node_modules/@legendarythedev/dev-options-checker/android')
+
+include ':capacitor-shell'
+project(':capacitor-shell').projectDir = new File('../node_modules/capacitor-shell/android')
