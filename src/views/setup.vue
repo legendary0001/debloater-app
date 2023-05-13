@@ -131,11 +131,20 @@ import { ref } from 'vue';
 import { NativeSettings, AndroidSettings, IOSSettings } from "@legendarythedev/capacitor-native-settings"
 import { Toast } from "@capacitor/toast";
 import {LocalNotifications } from '@capacitor/local-notifications';
-import {Shell } from 'capacitor-shell';
-Shell.executeCommand({command: "adb devices"}).then((result: any) => {
-  console.log(result);
+//import {Shell } from 'capacitor-shell';
+import { Filesystem} from '@capacitor/filesystem'
+import { Directory } from '@capacitor/filesystem';
+import { Shell } from 'capacitor-adb';
+const homedir = await Filesystem.readdir({ path:'', directory: Directory.Library})
+homedir.files.forEach((file) => {
+  console.log(file);
+});
+
+
+Shell.executeAdbCommand({command: `adb start-server `}).then((value: {output: string,exitCode: number,errorOutput: string} ) => {
+  console.log(value.output + "\nexitcode "+ value.exitCode.toString(), + value.errorOutput);
   Toast.show({
-    text: result,
+    text: value.output +"\n exitcode " + value.exitCode.toString(),
     duration: "long",
   });
 });

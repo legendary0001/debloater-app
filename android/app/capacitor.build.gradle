@@ -11,6 +11,7 @@ apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
     implementation project(':capacitor-app')
     implementation project(':capacitor-device')
+    implementation project(':capacitor-filesystem')
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-local-notifications')
@@ -19,6 +20,7 @@ dependencies {
     implementation project(':capacitor-toast')
     implementation project(':legendarythedev-capacitor-native-settings')
     implementation project(':legendarythedev-dev-options-checker')
+    implementation project(':capacitor-adb')
     implementation project(':capacitor-shell')
 
 }

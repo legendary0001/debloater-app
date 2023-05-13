@@ -8,6 +8,9 @@ project(':capacitor-app').projectDir = new File('../node_modules/@capacitor/app/
 include ':capacitor-device'
 project(':capacitor-device').projectDir = new File('../node_modules/@capacitor/device/android')
 
+include ':capacitor-filesystem'
+project(':capacitor-filesystem').projectDir = new File('../node_modules/@capacitor/filesystem/android')
+
 include ':capacitor-haptics'
 project(':capacitor-haptics').projectDir = new File('../node_modules/@capacitor/haptics/android')
 
@@ -31,6 +34,9 @@ project(':legendarythedev-capacitor-native-settings').projectDir = new File('../
 
 include ':legendarythedev-dev-options-checker'
 project(':legendarythedev-dev-options-checker').projectDir = new File('../node_modules/@legendarythedev/dev-options-checker/android')
+
+include ':capacitor-adb'
+project(':capacitor-adb').projectDir = new File('../node_modules/capacitor-adb/android')
 
 include ':capacitor-shell'
 project(':capacitor-shell').projectDir = new File('../node_modules/capacitor-shell/android')
