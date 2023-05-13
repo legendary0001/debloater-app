@@ -27,7 +27,7 @@
     "@ionic/vue-router": "7.0.6",
     "@legendarythedev/capacitor-native-settings": "^4.0.7",
     "@legendarythedev/dev-options-checker": "^0.0.4",
-    "capacitor-adb": "^0.0.1",
+    "capacitor-adb": "^0.0.2",
     "capacitor-shell": "^0.0.7",
     "ionicons": "^7.0.0",
     "vue": "3.3.1",

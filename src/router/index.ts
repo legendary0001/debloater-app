@@ -8,21 +8,24 @@ let value:any = null;
   console.log('Got value', value);
   value = value.value;
 })
-
+let path:string = 'null';
 let main: any = null;
 if (value === 'true') {
 
  main = HomePage
+ path = '/homee'
 } else {
    main = () => import('../views/setup.vue')
+    path = '/setup'
+    console.log(main)
 }
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: path
   },
   {
-    path: '/home',
+    path: path,
     name: 'Home',
     component: main,
   }

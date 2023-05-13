@@ -135,19 +135,9 @@ import {LocalNotifications } from '@capacitor/local-notifications';
 import { Filesystem} from '@capacitor/filesystem'
 import { Directory } from '@capacitor/filesystem';
 import { Shell } from 'capacitor-adb';
-const homedir = await Filesystem.readdir({ path:'', directory: Directory.Library})
-homedir.files.forEach((file) => {
-  console.log(file);
-});
 
 
-Shell.executeAdbCommand({command: `adb start-server `}).then((value: {output: string,exitCode: number,errorOutput: string} ) => {
-  console.log(value.output + "\nexitcode "+ value.exitCode.toString(), + value.errorOutput);
-  Toast.show({
-    text: value.output +"\n exitcode " + value.exitCode.toString(),
-    duration: "long",
-  });
-});
+
 let devtoolsenabled: boolean = false;
 DevOptionsChecker.checkDevOptions().then((result: any) => {
   devtoolsenabled = result.enabled;
@@ -289,7 +279,13 @@ function showMe(e: string) {
 
 </script>
 <script lang="ts">
-
+Shell.executeAdbCommand({command: `adb start-server `}).then((value: {output: string,exitCode: number,errorOutput: string} ) => {
+  console.log(value.output + "\nexitcode "+ value.exitCode.toString(), + value.errorOutput);
+  Toast.show({
+    text: value.output +"\n exitcode " + value.exitCode.toString(),
+    duration: "long",
+  });
+});
 export default defineComponent({
 
   components: { IonIcon, IonList, IonItem, IonSelect, IonSelectOption, IonContent, IonHeader, IonPage, IonTitle, IonToolbar },
