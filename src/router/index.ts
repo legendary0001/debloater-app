@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import HomePage from '../views/HomePage.vue'
 import { Preferences } from '@capacitor/preferences';
+import setuppage from '../views/setup.vue';
 let value:any = null;
  Preferences.get({ key: 'setuped' })
  .then((value:any) => {
@@ -13,9 +14,9 @@ let main: any = null;
 if (value === 'true') {
 
  main = HomePage
- path = '/homee'
+ path = '/home'
 } else {
-   main = () => import('../views/setup.vue')
+   main = setuppage
     path = '/setup'
     console.log(main)
 }
@@ -23,6 +24,15 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: path
+  },
+  {
+
+    path: '/usbdebug',
+ component: () => import('../views/usbdebug.vue')
+  },
+  {
+    path: '/wifidebug',
+    component: () => import('../views/wifidebug.vue')
   },
   {
     path: path,

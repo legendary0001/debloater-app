@@ -1,0 +1,33 @@
+.container1 {
+    padding: 2px 16px;
+    color: #ffffff;
+  }
+ 
+  ion-page {
+    height: 100%;
+    width: 100%;
+  }
+  ion-icon{
+    flex-shrink: 0;
+   }
+  #buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    align-items: center;
+  }
+ 
+  #container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  ion-title.top {
+    font-size: 30px;
+  }
